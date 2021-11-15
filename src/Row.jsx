@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
+import "./row.css";
 
 const base_url_poster = "https://image.tmdb.org/t/p/original";
 
-const Row = ({ title, fetchURL }) => {
+const Row = ({ title, fetchURL, isLargeRow }) => {
   const [getMovies, setMovies] = useState([]);
 
   //pulling info when the row component loads
@@ -25,9 +26,11 @@ const Row = ({ title, fetchURL }) => {
           ? getMovies.map((movie) => {
               return (
                 <img
-                  className="row_poster"
+                  className={`row_poster ${isLargeRow && "row_posterLarge"}`}
                   key={movie.id}
-                  src={`${base_url_poster}${movie.poster_path}`}
+                  src={`${base_url_poster}${
+                    isLargeRow ? movie.poster_path : movie.backdrop_path
+                  }`}
                   alt={movie.name || movie.original_title}
                 />
               );
