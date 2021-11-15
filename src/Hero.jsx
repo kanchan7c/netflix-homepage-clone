@@ -8,7 +8,7 @@ const Hero = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.originals);
+      const request = await axios.get(requests.all);
       setMovie(request.data.results[Math.floor(Math.random() * 20)]);
       return request;
     }
