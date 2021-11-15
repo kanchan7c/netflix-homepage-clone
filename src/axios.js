@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const variant = axios.create( {
+const UrlVariant = axios.create( {
     baseURL: "https://api.themoviedb.org/3/",
 });
 
-export default variant;
+export default UrlVariant;
