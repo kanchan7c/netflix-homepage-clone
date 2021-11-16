@@ -33,12 +33,11 @@
   display: none;
 }
 .row_posterLarge {
-  height: 40%;
-  margin-right: 0.6rem;
+  height: 95%;
 }
 
 .row_poster {
-  height: 35%;
+  height: 90%;
   max-width: 200px;
   margin-right: 0.6rem;
   transition: transform 500ms;
@@ -54,6 +53,20 @@
   transform: scaleY(1.11);
   opacity: 1;
   cursor: pointer;
+}
+
+.row_poster-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.row_poster-title {
+  height: 2rem;
+  width: 12rem;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {

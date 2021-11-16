@@ -24,7 +24,6 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     height: "500",
     width: "100%",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
@@ -51,15 +50,20 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
         {getMovies.length !== 0
           ? getMovies.map((movie) => {
               return (
-                <img
-                  className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-                  key={movie.id}
-                  onClick={() => handleClick(movie)}
-                  src={`${base_url_poster}${
-                    isLargeRow ? movie.poster_path : movie.backdrop_path
-                  }`}
-                  alt={movie.name || movie.original_title}
-                />
+                <div className="row_poster-contents">
+                  <img
+                    className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+                    key={movie.id}
+                    onClick={() => handleClick(movie)}
+                    src={`${base_url_poster}${
+                      isLargeRow ? movie.poster_path : movie.backdrop_path
+                    }`}
+                    alt={movie.name || movie.original_title}
+                  />
+                  <span className="row_poster-title">
+                    {movie.name || movie.original_title}
+                  </span>
+                </div>
               );
             })
           : ""}
