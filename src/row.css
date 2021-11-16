@@ -34,11 +34,13 @@
 }
 .row_posterLarge {
   height: 95%;
+ max-height: 250px;
 }
 
 .row_poster {
   height: 90%;
   max-width: 200px;
+  max-height: 200px;
   margin-right: 0.6rem;
   transition: transform 500ms;
 }
@@ -58,6 +60,7 @@
 .row_poster-contents {
   display: flex;
   flex-direction: column;
+  max-height: 300px;
 }
 
 .row_poster-title {
